@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/database_connection'
+require './lib/database_connection_setup'
+require ''
 
 class Chitter < Sinatra::Base
   
@@ -7,6 +10,10 @@ class Chitter < Sinatra::Base
 
   get '/' do
     erb :index 
+  end
+
+  post '/add' do
+    Peep.add(params[:text])
   end
 
 end
