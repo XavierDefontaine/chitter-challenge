@@ -20,26 +20,5 @@ body {
 </h1>
 
 <nav>
-<% if session[:username] %>
-<%= "Welcome " + session[:username]%>
-<% end %> 
 
-<form action='/sign_up' method='get'>
-<button type="submit">Sign up</button> 
-</form>
-  ---------------<br>
-<form action='/add' method='post'> 
-  <input type='text' name='text' placeholder="What's on your mind?">
-  <input type="submit" value="Peep">
-  <br>---------------
-</form>
-
-</nav>
-<% @peep_list = Peep.all %>
-<ul>
-<% @peep_list.each do |peep|  %>
-<div>
- [<%= peep.date %>] < <%= session[:username] %> >  <%= peep.text %> <br>
- </div>
- <% end %> 
 </body> 
