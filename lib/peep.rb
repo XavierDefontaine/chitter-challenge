@@ -1,4 +1,5 @@
 require './lib/database_connection'
+require './lib/database_connection_setup'
 
 class Peep
 
@@ -9,8 +10,8 @@ class Peep
   end
 
   def self.add(text:)
-    
-    Peep.new(text: text)
+    peep = DBconnect.query("INSERT INTO peeps (text) VALUES('#{text}') RETURNING text;")
+    Peep.new(text: peep[0]['text'])
   end
 
 end
