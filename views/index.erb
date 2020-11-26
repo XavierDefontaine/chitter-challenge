@@ -27,7 +27,7 @@ Welcome to Chitter
 
 <div label="peep-area">
 
-  <% @peeps.each do |peep| %>
+  <% @peeps.reverse.each do |peep| %>
   <div> 
   <%="#{peep.date_time}" + " | " + "#{peep.text}"%>
   </div>
