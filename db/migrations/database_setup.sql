@@ -1,2 +1,2 @@
 CREATE DATABASE chitter;
-CREATE TABLE peeps (text varchar(120), date_time TIMESTAMP);
+CREATE TABLE peeps (id SERIAL PRIMARY KEY, text varchar(120), date_time TIMESTAMP);

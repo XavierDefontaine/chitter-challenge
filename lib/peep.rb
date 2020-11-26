@@ -9,6 +9,7 @@ class Peep
   end
 
   def self.add(text:)
+    
     Peep.new(text: text)
   end
 
